@@ -1,8 +1,5 @@
 import 'dart:io';
 
-import 'package:timeago/src/messages/en_messages.dart';
-import 'package:timeago/src/messages/es_messages.dart';
-import 'package:timeago/src/messages/lookupmessages.dart';
 import 'package:timeago/timeago.dart';
 
 String _default = 'en';
@@ -126,8 +123,6 @@ void setLocaleMessages(String locale, LookupMessages lookupMessages) {
 String format(DateTime date,
     {String? locale, DateTime? clock, bool allowFromNow = false}) {
   final locale = Platform.localeName.substring(0, 2);
-  print(locale);
-  print(_default);
   final _locale = locale ?? _default;
   if (_lookupMessagesMap[_locale] == null) {
     print(
